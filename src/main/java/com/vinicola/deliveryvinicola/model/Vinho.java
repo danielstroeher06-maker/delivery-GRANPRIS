@@ -3,7 +3,7 @@ package com.vinicola.deliveryvinicola.model;
 import jakarta.persistence.*;
 import lombok.Data;
 
-import javax.management.ConstructorParameters;
+
 
 
 @Entity
@@ -34,7 +34,8 @@ public class Vinho {
     @Column(length = 1000)
     private String descricao;
 
-    public Vinho("Granpris",100.0){
-
+    public Vinho(){
+        this.nome = "Granpris";
+        this.preco = 100.0;
     }
 }
