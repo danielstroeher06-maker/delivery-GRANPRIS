@@ -4,8 +4,6 @@ import jakarta.persistence.*;
 import lombok.Data;
 
 
-
-
 @Entity
 @Table(name = "Vinho")
 @Data
@@ -35,7 +33,6 @@ public class Vinho {
     private String descricao;
 
     public Vinho(){
-        this.nome = "Granpris";
-        this.preco = 100.0;
+
     }
 }
