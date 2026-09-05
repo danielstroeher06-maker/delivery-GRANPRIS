@@ -32,7 +32,12 @@ public class Vinho {
     @Column(length = 1000)
     private String descricao;
 
-    public Vinho(){
-
+    public Vinho() {
+    }
+//
+    public Vinho(Long id, String nome, Double preco) {
+        this.id = id;
+        this.nome = nome;
+        this.preco = preco;
     }
 }
