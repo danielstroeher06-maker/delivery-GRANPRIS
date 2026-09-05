@@ -31,10 +31,10 @@ public class Vinho {
 
     @Column(length = 1000)
     private String descricao;
-
+//  construtores vazios permitem que seja adicionado depois
     public Vinho() {
     }
-//
+//  constrotores com parâmentros necessitam de um definição
     public Vinho(Long id, String nome, Double preco) {
         this.id = id;
         this.nome = nome;
