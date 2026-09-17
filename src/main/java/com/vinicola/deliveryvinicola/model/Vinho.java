@@ -3,6 +3,8 @@ package com.vinicola.deliveryvinicola.model;
 import jakarta.persistence.*;
 import lombok.Data;
 
+import java.util.Scanner;
+
 
 @Entity
 @Table(name = "Vinho")
@@ -31,13 +33,71 @@ public class Vinho {
 
     @Column(length = 1000)
     private String descricao;
-//  construtores vazios permitem que seja adicionado depois
+    //  construtores vazios permitem que seja adicionado depois
+
+
+    public String getNome() {
+        return nome;
+    }
+
+    public String getTipoUva() {
+        return tipoUva;
+    }
+
+
+    public Integer getSafra() {
+        return safra;
+    }
+
+    public Integer getVolumeMl() {
+        return volumeMl;
+    }
+
+    public Integer getEstoque() {
+        return estoque;
+    }
+
+    public Double getPreco() {
+        return preco;
+    }
+
+
     public Vinho() {
     }
-//  constrotores com parâmentros necessitam de um definição
-    public Vinho(Long id, String nome, Double preco) {
-        this.id = id;
+
+    //  constrotores com parâmentros necessitam de um definição
+    public Vinho(String nome, Double preco, String tipoUva, Integer safra, Integer volumeMl) {
         this.nome = nome;
+        this.tipoUva = tipoUva;
+        this.safra = safra;
+        this.volumeMl = volumeMl;
         this.preco = preco;
     }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public void setTipoUva(String tipoUva) {
+        this.tipoUva = tipoUva;
+    }
+
+    public void setSafra(Integer safra) {
+        this.safra = safra;
+    }
+
+    public void setVolumeMl(Integer volumeMl) {
+        this.volumeMl = volumeMl;
+    }
+
+    public void setEstoque(Integer estoque) {
+        this.estoque = estoque;
+    }
+
+    public void setPreco(Double preco) {
+        this.preco = preco;
+    }
+
+
+
 }
