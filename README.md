@@ -6,6 +6,8 @@ Sistema de delivery para vinícola, desenvolvido em **Java** com **Spring Boot**
 
 O **Delivery GRANPRIS** é uma API voltada para gerenciar o catálogo de vinhos e o processo de entrega de uma vinícola, oferecendo operações de cadastro, consulta, atualização e remoção de produtos.
 
+> 🌱 **Projeto de aprendizado em evolução.** Este repositório documenta meu progresso estudando Java e Spring Boot, e é atualizado progressivamente conforme avanço nos estudos. A pasta [`docs/aprendizado/`](docs/aprendizado) reúne rascunhos e experimentos que fizeram parte desse processo, mas que não fazem parte do código de produção da aplicação.
+
 ## 🚀 Tecnologias utilizadas
 
 - **Java**
@@ -19,6 +21,8 @@ O **Delivery GRANPRIS** é uma API voltada para gerenciar o catálogo de vinhos 
 ```
 delivery-GRANPRIS/
 ├── .mvn/wrapper/
+├── docs/
+│   └── aprendizado/        # Rascunhos e registros do processo de aprendizado
 ├── src/
 │   ├── main/
 │   │   ├── java/          # Código-fonte da aplicação
@@ -73,4 +77,4 @@ Contribuições são bem-vindas! Sinta-se à vontade para abrir uma *issue* ou e
 
 ## 📄 Licença
 
-Este projeto ainda não possui uma licença definida.
+Este projeto está licenciado sob a [Licença MIT](LICENSE).
