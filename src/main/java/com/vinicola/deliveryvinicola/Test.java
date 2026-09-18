@@ -1,6 +1,7 @@
 package com.vinicola.deliveryvinicola;
 
 import com.vinicola.deliveryvinicola.model.Vinho;
+import com.vinicola.deliveryvinicola.service.VinhoService;
 
 import java.util.Scanner;
 
@@ -8,7 +9,8 @@ public class Test {
     public static void main(String[] args) {
 
         int sair = -1;
-
+        int quantidade = 0;
+        Integer estoque = 0;
         Vinho v1 = new Vinho();
 
         v1.setNome("Granpris");
@@ -26,26 +28,14 @@ public class Test {
             if (sair == 0) {
                 System.out.println("Saindo do programa...");
                 break;
-            } else if (sair < 0 || sair > 1){
+            } else if (sair < 0 || sair > 1) {
                 System.out.println("404 - Opção invalida.");
                 continue;
             }
-            System.out.println("Quanntidade:  ");
-            int quantidade = intProduto.nextInt();
-            Integer estoque = v1.getEstoque();
-            if (quantidade <= 0) {
-                System.out.println("quantidade invalida.");
-                return;
-            }
+            VinhoService vender_vinho = new VinhoService();
 
-            if (estoque - quantidade < 0) {
-                System.out.println("estoque insuficiente.");
-                return;
-            }
-            v1.setEstoque(estoque - quantidade);
-            System.out.println("Compra realizada com sucesso!");
+            vender_vinho.vender(v1, quantidade);
 
-            estoque = v1.getEstoque();
         }
 
         System.out.println(v1.getNome());
