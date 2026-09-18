@@ -1,9 +1,9 @@
-package com.vinicola.deliveryvinicola;
-
-import com.vinicola.deliveryvinicola.model.Vinho;
-import com.vinicola.deliveryvinicola.service.VinhoService;
-
-import java.util.Scanner;
+//package com.vinicola.deliveryvinicola;
+//
+//import com.vinicola.deliveryvinicola.model.Vinho;
+//import com.vinicola.deliveryvinicola.service.VinhoService;
+//
+//import java.util.Scanner;
 
 public class Test {
     public static void main(String[] args) {
