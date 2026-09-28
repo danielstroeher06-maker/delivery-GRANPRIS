@@ -10,10 +10,14 @@ import java.util.Optional;
 @Service
 public class VinhoService {
 
-    private VinhoRepository repository;
+    private final VinhoRepository repository;
 
     public VinhoService(VinhoRepository repository) {
         this.repository = repository;
+    }
+
+    public List<Vinho> buscarPorNome(String nome) {
+        return repository.findByNome(nome);
     }
 
     public void vender(Long id, int quantidade) {
@@ -35,7 +39,7 @@ public class VinhoService {
                 return;
             }
 
-            vinho.setEstoque(vinho.getEstoque() - quantidade);
+            vinho.setEstoque(estoque - quantidade);
             repository.save(vinho);
 
             System.out.println("Compra realizada com sucesso!");
@@ -46,9 +50,6 @@ public class VinhoService {
     }
 
     public List<Vinho> listarVinhos() {
-
-        List<Vinho> vinhos = repository.findAll();
-        return vinhos;
-
+        return repository.findAll();
     }
 }
