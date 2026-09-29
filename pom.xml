@@ -9,7 +9,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.vinicola</groupId>
-    <artifactId>delivery-vinicola</artifactId>
+    <artifactId>delivery_vinicola</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>delivery-vinicola</name>
     <description>delivery-vinicola</description>
