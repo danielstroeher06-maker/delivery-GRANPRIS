@@ -6,8 +6,8 @@ import com.vinicola.deliveryvinicola.repository.VinhoRepository;
 import org.springframework.stereotype.Service;
 import com.vinicola.deliveryvinicola.model.Vinho;
 
-import java.util.List;
 import java.util.Optional;
+
 
 @Service
 public class VinhoService {
@@ -17,14 +17,16 @@ public class VinhoService {
         this.repository = repository;
     }
 
-    public List<Vinho> buscarPorNome(String nome) {
-        return repository.findByNome(nome);
+    public Vinho buscarPorNome(String nome) {
+        Optional<Vinho> optionalVinho = repository.findByNome(nome);
+        return optionalVinho.orElseThrow(() -> new VinhoNaoEncontrado("Vinho não encontrado: " + nome));
+
     }
 
-    public void vender(Long id, int quantidade) {
+    public String vender(String nome, int quantidade) {
 
-        Optional<Vinho> optionalVinho = repository.findById(id);
-        Vinho vinho = optionalVinho.orElseThrow(() -> new VinhoNaoEncontrado("Vinho não encontrado."));
+        Optional<Vinho> optionalVinho = repository.findByNome(nome);
+        Vinho vinho = optionalVinho.orElseThrow(() -> new VinhoNaoEncontrado("Vinho não encontrado: " + nome));
 
         int estoque = vinho.getEstoque();
 
@@ -39,15 +41,26 @@ public class VinhoService {
         vinho.setEstoque(estoque - quantidade);
         repository.save(vinho);
 
-        System.out.println("Compra realizada com sucesso!");
-
+        return "Compra realizada com sucesso!";
     }
 
-    public List<Vinho> listarVinhos() {
-        return repository.findAll();
+    public String reporestoque(String nome, int quantidade){
+        Optional<Vinho> optionalVinho = repository.findByNome(nome);
+        Vinho vinho = optionalVinho.orElseThrow(()-> new VinhoNaoEncontrado("Vinho não encontrado!"));
+        if (quantidade <= 0){
+            throw new QuantidadeInvalida("Quantidade invalida! A quantidade deve ser maior que zero.");
+        }
+        vinho.setEstoque(vinho.getEstoque()+quantidade);
+        repository.save(vinho);
+        return "Estoque atualizado com sucesso!";
     }
+
 
     public void cadastrarVinho(Vinho vinho) {
         repository.save(vinho);
+    }
+
+    public void deleteVinho(Long id) {
+        repository.deleteById(id);
     }
 }
