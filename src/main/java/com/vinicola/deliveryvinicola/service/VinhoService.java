@@ -6,6 +6,7 @@ import com.vinicola.deliveryvinicola.repository.VinhoRepository;
 import org.springframework.stereotype.Service;
 import com.vinicola.deliveryvinicola.model.Vinho;
 
+import java.util.List;
 import java.util.Optional;
 
 
@@ -53,6 +54,10 @@ public class VinhoService {
         vinho.setEstoque(vinho.getEstoque()+quantidade);
         repository.save(vinho);
         return "Estoque atualizado com sucesso!";
+    }
+
+    public List<Vinho> listarVinhos() {
+        return repository.findAll();
     }
 
 
