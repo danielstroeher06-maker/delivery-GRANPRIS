@@ -32,7 +32,7 @@ public class VinhoService {
         int estoque = vinho.getEstoque();
 
         if (quantidade > estoque) {
-            throw new QuantidadeInvalida("Quantidade invalida! Estoque insuficiente.");
+           throw new QuantidadeInvalida("Quantidade invalida! Estoque insuficiente.");
         }
 
         if (quantidade <= 0) {

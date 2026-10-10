@@ -41,9 +41,7 @@ public class VinhoController {
     @PostMapping("/venda")
     public String frentedeVenda(@RequestBody CompraDTO compraDTO) {
         String nomeVinho = compraDTO.getNomeVinho();
-        System.out.println("Vinho da frente: " + nomeVinho);
         int quantidade = compraDTO.getQuantidade();
-        System.out.println("Quantidade recebida: " + quantidade);
         return vinhoService.vender(nomeVinho, quantidade);
     }
 
