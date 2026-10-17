@@ -56,6 +56,14 @@ public class VinhoService {
         return "Estoque atualizado com sucesso!";
     }
 
+    public String descri(String nome, String descrico) {
+        Optional<Vinho> optionalVinho = repository.findByNome(nome);
+        Vinho vinho = optionalVinho.orElseThrow(()->new VinhoNaoEncontrado("Vinho não encontrado!"));
+        vinho.setDescricao(descrico);
+        repository.save(vinho);
+        return "Vinho atualizado com sucesso!";
+    }
+
     public List<Vinho> listarVinhos() {
         return repository.findAll();
     }

@@ -1,15 +1,14 @@
 package com.vinicola.deliveryvinicola.controller;
 
 import com.vinicola.deliveryvinicola.dto.CompraDTO;
+import com.vinicola.deliveryvinicola.dto.DescriDTO;
 import com.vinicola.deliveryvinicola.dto.ReporDTO;
 import com.vinicola.deliveryvinicola.model.Vinho;
 import com.vinicola.deliveryvinicola.service.VinhoService;
 
+import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
-
-import static org.springframework.data.jpa.domain.AbstractPersistable_.id;
 
 @RestController
 @RequestMapping("/vinhos")
@@ -22,7 +21,7 @@ public class VinhoController {
 
 
     @PostMapping("/vinho")
-    public String cadastrarVinho(@RequestBody Vinho vinho) {
+    public String cadastrarVinho(@RequestBody @Valid Vinho vinho) {
         vinhoService.cadastrarVinho(vinho);
         return "Vinho cadastrado com sucesso!";
     }
@@ -46,9 +45,16 @@ public class VinhoController {
     }
 
     @PostMapping("/repor")
-    public String reporEstoque(@RequestBody ReporDTO reporDTO) {
+    public String reporEstoque(@RequestBody @Valid ReporDTO reporDTO) {
         String nomeVinho = reporDTO.getNomeVinho();
         int quantidade = reporDTO.getQuantidade();
         return vinhoService.reporestoque(nomeVinho, quantidade);
+    }
+
+    @PostMapping("/descricao")
+    public String addDescricao(@RequestBody DescriDTO descriDTO) {
+        String nomeVinho = descriDTO.getNomeVinho();
+        String descricaoVinho= descriDTO.getDescricaoVinho();
+        return vinhoService.descri(nomeVinho, descricaoVinho);
     }
 }

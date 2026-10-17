@@ -37,30 +37,63 @@ delivery-GRANPRIS/
 
 ### Pré-requisitos
 
-- Java JDK 17+ instalado
-- Maven (ou usar o Maven Wrapper incluso no projeto)
+- Java JDK 25 instalado.
+- Maven instalado (opcional, pois o projeto inclui o Maven Wrapper).
+- PostgreSQL 18 instalado.
+- Banco de dados `delivery_vinicola` criado no PostgreSQL.
 
-### Passos
+### Passos para executar
 
-1. Clone o repositório:
-   ```bash
-   git clone https://github.com/danielstroeher06-maker/delivery-GRANPRIS.git
-   cd delivery-GRANPRIS
-   ```
+**1. Clone o repositório**
 
-2. Execute a aplicação usando o Maven Wrapper:
-   ```bash
-   ./mvnw spring-boot:run
-   ```
-   No Windows:
-   ```bash
-   mvnw.cmd spring-boot:run
-   ```
+```bash
+git clone https://github.com/danielstroeher06-maker/delivery-GRANPRIS.git
+cd delivery-GRANPRIS
+```
 
-3. A aplicação estará disponível em:
-   ```
-   http://localhost:8080
-   ```
+**2. Configure a variável de ambiente do banco de dados**
+
+Por segurança, a senha do banco de dados não fica armazenada diretamente no código-fonte. O projeto utiliza a variável de ambiente `DB_PASSWORD` para acessar o PostgreSQL.
+
+Cada pessoa deve configurar essa variável com a senha do próprio usuário do PostgreSQL.
+
+No IntelliJ IDEA:
+
+1. Acesse **Run → Edit Configurations**.
+2. Selecione a configuração de execução da aplicação Spring Boot.
+3. Localize o campo **Environment variables**.
+4. Adicione `DB_PASSWORD` e informe a senha do seu usuário do PostgreSQL.
+5. Salve as alterações.
+
+**Importante:** não compartilhe sua senha nem a inclua no código-fonte ou nos arquivos enviados ao GitHub.
+
+**3. Execute a aplicação usando o Maven Wrapper**
+
+No Linux ou macOS:
+
+```bash
+./mvnw spring-boot:run
+```
+
+No Windows:
+
+```bat
+mvnw.cmd spring-boot:run
+```
+
+**4. Acesse a aplicação**
+
+Após iniciar corretamente, a aplicação estará disponível localmente em:
+
+```text
+http://localhost:8080
+```
+
+### Observações
+
+- Certifique-se de que o PostgreSQL esteja em execução.
+- O banco `delivery_vinicola` deve existir antes de iniciar a aplicação.
+- A variável `DB_PASSWORD` precisa estar configurada no ambiente em que a aplicação será executada.
 
 ## 🍇 Funcionalidades
 
