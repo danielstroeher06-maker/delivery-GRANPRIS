@@ -24,6 +24,7 @@ public class VinhoService {
 
     }
 
+
     public String vender(String nome, int quantidade) {
 
         Optional<Vinho> optionalVinho = repository.findByNome(nome);

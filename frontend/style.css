@@ -1,54 +1,124 @@
-body{
+body {
     background-color: #E8D8B8;
-    font-family: Georgia, serif;
     margin: 0;
     padding: 0;
 }
 
 header {
     text-align: center;
-    background-color:#211713;
+    background-color: #211713;
     margin: 0;
     padding: 20px 0;
 
 }
+
 @font-face {
     font-family: UnifrakturCook-Bold;
     src: url("./fonts/unifrakturCook-Bold.ttf") format("truetype");
 }
 
 header h1 {
-   margin-top: 0;
+    margin-top: 0;
     margin-bottom: 0;
-    font-family: UnifrakturCook-Bold;
+    font-family: UnifrakturCook-Bold, serif;
     color: #C6A15B;
     font-size: 40px;
 }
+
 header p {
     margin-top: 0;
     color: #C6A15B;
     font-size: 20px;
 }
+
 main {
     text-align: center;
     padding: 20px;
 }
 
-main h2{
+main h2 {
     margin-top: 0;
     margin-bottom: 0;
-    font-family: UnifrakturCook-Bold;
+    font-family: UnifrakturCook-Bold, serif;
     color: black;
     font-size: 30px;
 }
 
-main h3{
+main h3 {
     font-family: Georgia, serif;
     margin: 20px;
 }
-.filtro{
+
+.filtro {
     border-radius: 5px;
     margin: 5px;
-    border: 2px solid #211713;
+    border: 2px solid #d2b991;
     padding: 5px;
 }
+
+.vinhos {
+    margin: 20px;
+    padding: 10px;
+    display: flex;
+    gap: 50px;
+}
+
+.vinho {
+    flex: 1;
+    padding: 0;
+    border-radius: 5px;
+    border: 2px solid #d2b991;
+    display: flex;
+    flex-direction: column;
+}
+
+.texto {
+    flex: 1;
+    min-width: 0;
+    padding: 0 10px;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.vinho h4 {
+    font-family: UnifrakturCook-Bold, serif;
+    color: black;
+    font-size: 25px;
+    margin-bottom: 0;
+    margin-top: 15px;
+
+}
+
+.vinho p {
+    display: -webkit-box;
+    font-family: Georgia, serif;
+    font-size: 17px;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.vinho img {
+    display: block;
+    width: 100%;
+    height: 500px;
+    margin: 0;
+    padding: 0;
+}
+
+
+.preco {
+}
+
+button {
+    background-color: #211713;
+    border-radius: 8px;
+    border: 3px solid #d2b991;
+    color: #C6A15B;
+    margin: 5px;
+    margin-top: auto;
+    padding: 6px;
+    min-height: 0;
+}
+
