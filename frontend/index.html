@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" xmlns:Quantidade="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -24,67 +24,97 @@
                 <span class="filtro">Espumantes</span>
             </div>
         </section>
-        <div class="vinhos">
-            <div class="vinho">
-                <img src="imagens/laica.jpg" alt="Garrafa de vinho laica">
-                <div class="texto">
-                    <h4>Laica</h4>
-                    <span class="tipo">
-                        Merlot Seco
-                    </span>
-                    <p>Um vinho especial, feito com amor para se tomar com o seu amor! </p>
-                    <span class="preco">
-                        R$250,00
-                     </span>
-                    <button>Adicionar no carinho</button>
+        <section>
+            <div class="vinhos">
+                <div class="vinho">
+                    <img src="imagens/laica.jpg" alt="Garrafa de vinho laica">
+                    <div class="texto">
+                        <h4>Laica</h4>
+                        <span class="tipo">
+                            Merlot Seco
+                        </span>
+                        <p>Um vinho especial, feito com amor para se tomar com o seu amor! </p>
+                        <span class="preco">
+                            R$250,00
+                         </span>
+                        <div class="quantidade">
+                            <button>-</button>
+                            <label>
+                                <input type="number" min="0" value="1" class="quantidade-input">
+                            </label>
+                            <button>+</button>
+                        </div>
+                        <button>Adicionar no carinho</button>
+                    </div>
+                </div>
+                <div class="vinho">
+                    <img src="imagens/mel.jpg" alt="Garrafa de vinho mel">
+                    <div class="texto">
+                        <h4>Mel</h4>
+                        <span class="tipo">
+                            Bôrdo Suave
+                        </span>
+                        <p>Um vinho tão suave que parece mel.</p>
+                        <span class="preco">
+                            R$100,00
+                        </span>
+                        <div class="quantidade">
+                            <button>-</button>
+                            <label>
+                                <input type="number" min="0" value="1" class="quantidade-input">
+                            </label>
+                            <button>+</button>
+                        </div>
+                        <button>Adicionar no carinho</button>
+                    </div>
+                </div>
+                <div class="vinho">
+                    <img src="imagens/granpris.jpg" alt="Garrafa de vinho granpris">
+                    <div class="texto">
+                        <h4>Granpris</h4>
+                        <span class="tipo">
+                            Cabernet Sauvignon Seco
+                        </span>
+                        <p>Este vinho vai fazer você viver experiências sem iguais. </p>
+                        <span class="preco">
+                             R$300,00
+                         </span>
+                        <div class="quantidade">
+                            <button>-</button>
+                            <label>
+                                <input type="number" min="0" value="1" class="quantidade-input">
+                            </label>
+                            <button>+</button>
+                        </div>
+                        <button>Adicionar no carinho</button>
+                    </div>
+                </div>
+                <div class="vinho">
+                    <img src="imagens/rose.jpg" alt="Garrafa de vinho rose">
+                    <div class="texto">
+                        <h4>Rose</h4>
+                        <span class="tipo">
+                            Rose Seco
+                        </span>
+                        <p>Leve e refrescante, com delicados aromas de frutas vermelhas, seu sabor suave traz equilíbrio
+                            e
+                            elegância a cada taça. Perfeito para acompanhar refeições leves e momentos especiais, sirva
+                            gelado e desfrute de uma experiência inesquecível.</p>
+                        <span class="preco">
+                            R$200,00
+                        </span>
+                        <div class="quantidade">
+                            <button>-</button>
+                            <label>
+                                <input type="number" min="0" value="1" class="quantidade-input">
+                            </label>
+                            <button>+</button>
+                        </div>
+                        <button>Adicionar no carinho</button>
+                    </div>
                 </div>
             </div>
-            <div class="vinho">
-                <img src="imagens/mel.jpg" alt="Garrafa de vinho mel">
-                <div class="texto">
-                    <h4>Mel</h4>
-                    <span class="tipo">
-                        Bôrdo Suave
-                    </span>
-                    <p>Um vinho tão suave que parece mel.</p>
-                    <span class="preco">
-                        R$100,00
-                    </span>
-                    <button>Adicionar no carinho</button>
-                </div>
-            </div>
-            <div class="vinho">
-                <img src="imagens/granpris.jpg" alt="Garrafa de vinho granpris">
-                <div class="texto">
-                    <h4>Granpris</h4>
-                    <span class="tipo">
-                        Cabernet Sauvignon Seco
-                    </span>
-                    <p>Este vinho vai fazer você viver experiências sem iguais. </p>
-                    <span class="preco">
-                         R$300,00
-                     </span>
-                    <button>Adicionar no carinho</button>
-                </div>
-            </div>
-            <div class="vinho">
-                <img src="imagens/rose.jpg" alt="Garrafa de vinho rose">
-                <div class="texto">
-                    <h4>Rose</h4>
-                    <span class="tipo">
-                        Rose Seco
-                    </span>
-                    <p>
-                        Leve e refrescante, com delicados aromas de frutas vermelhas, seu sabor suave traz equilíbrio e elegância a cada taça.
-                        Perfeito para acompanhar refeições leves e momentos especiais, sirva gelado e desfrute de uma experiência inesquecível.
-                    </p>
-                    <span class="preco">
-                        R$200,00
-                    </span>
-                    <button>Adicionar no carinho</button>
-                </div>
-            </div>
-        </div>
+        </section>
     </section>
 </main>
 <script src="script.js"></script>

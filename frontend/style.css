@@ -64,7 +64,7 @@ main h3 {
 }
 
 .vinho {
-    flex: 1;
+    min-width: 240px;
     padding: 0;
     border-radius: 5px;
     border: 2px solid #d2b991;
@@ -78,6 +78,7 @@ main h3 {
     padding: 0 10px;
     display: flex;
     flex-direction: column;
+    text-align: left;
 
 }
 
@@ -94,7 +95,7 @@ main h3 {
     display: -webkit-box;
     font-family: Georgia, serif;
     font-size: 17px;
-    -webkit-line-clamp: 3;
+    -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
 }
@@ -116,9 +117,19 @@ button {
     border-radius: 8px;
     border: 3px solid #d2b991;
     color: #C6A15B;
-    margin: 5px;
+    margin:  0;
     margin-top: auto;
     padding: 6px;
     min-height: 0;
+    font-size: 15px;
+}
+
+.quantidade-input{
+    background-color: #E8D8B8;
+    width: 40px;
+    padding: 5px;
+    margin: 0;
+    border-radius: 5px;
+    border: 2px solid #d2b991;
 }
 
