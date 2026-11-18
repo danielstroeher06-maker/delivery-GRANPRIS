@@ -110,6 +110,11 @@ main h3 {
 
 
 .preco {
+    font-variant-numeric: tabular-nums;
+    font-size: 20px;
+    color: black;
+    margin-top: 10px;
+    justify-content: left;
 }
 
 button {
@@ -124,12 +129,34 @@ button {
     font-size: 15px;
 }
 
-.quantidade-input{
-    background-color: #E8D8B8;
-    width: 40px;
-    padding: 5px;
-    margin: 0;
-    border-radius: 5px;
-    border: 2px solid #d2b991;
+.quantidade{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: left;
+
 }
 
+.quantidade-input{
+    background-color: #E8D8B8;
+    width: 30px;
+    height: 16px;
+    padding: 5px;
+    border-radius: 5px;
+    border: 2px solid #d2b991;
+    margin-bottom: 5px;
+
+}
+
+.quantidade-input::-webkit-inner-spin-button{
+    -webkit-appearance: none;
+}
+.quantidade-input::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+}
+
+.quantidade-button{
+    margin-bottom: 5px;
+    height: 35px;
+    width: 30px;
+}
