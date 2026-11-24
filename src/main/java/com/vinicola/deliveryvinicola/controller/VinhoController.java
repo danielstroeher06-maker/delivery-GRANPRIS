@@ -1,5 +1,6 @@
 package com.vinicola.deliveryvinicola.controller;
 
+import com.vinicola.deliveryvinicola.dto.AlterarDTO;
 import com.vinicola.deliveryvinicola.dto.CompraDTO;
 import com.vinicola.deliveryvinicola.dto.DescriDTO;
 import com.vinicola.deliveryvinicola.dto.ReporDTO;
@@ -8,6 +9,8 @@ import com.vinicola.deliveryvinicola.service.VinhoService;
 
 import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.*;
+
+import java.math.BigDecimal;
 import java.util.List;
 
 @CrossOrigin
@@ -30,6 +33,17 @@ public class VinhoController {
     @GetMapping("/listar")
     public List<Vinho> listarVinhos() {
         return vinhoService.listarVinhos();
+    }
+
+    @PostMapping("/alterar-tipo")
+    public String alterarVinho(@RequestBody AlterarDTO alterarDTO) {
+        String nomeVinho = alterarDTO.getNomeVinho();
+        String tipoVinho = alterarDTO.getTipoVinho();
+        String tipouvaVinho = alterarDTO.getTipoUvaVinho();
+        Integer safraVinho = alterarDTO.getSafraVinho();
+        String descriVinho = alterarDTO.getDescriVinho();
+        BigDecimal precoVinho = alterarDTO.getPrecoVinho();
+        return vinhoService.alterar( nomeVinho, tipoVinho, tipouvaVinho, safraVinho, descriVinho, precoVinho);
     }
 
     @DeleteMapping("/{id}")
@@ -55,7 +69,7 @@ public class VinhoController {
     @PostMapping("/descricao")
     public String addDescricao(@RequestBody DescriDTO descriDTO) {
         String nomeVinho = descriDTO.getNomeVinho();
-        String descricaoVinho= descriDTO.getDescricaoVinho();
+        String descricaoVinho = descriDTO.getDescricaoVinho();
         return vinhoService.descri(nomeVinho, descricaoVinho);
     }
 }

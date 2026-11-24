@@ -11,9 +11,28 @@ fetch("http://localhost:8080/vinhos/listar")
     })
     .then(Data => {
         console.log(Data);
+        vinhos.innerHTML = ("");
         Data.forEach(function (vinho) {
+            const div = document.createElement("div");
+            div.className = "vinho";
+            vinhos.append(div);
+            const title = document.createElement("h4");
+            title.textContent = vinho.nome;
+            div.append(title);
+            const tipo = document.createElement("span");
+            tipo.className = "tipo";
+            tipo.textContent = vinho.tipoUva;
+            div.append(tipo);
+            const descri = document.createElement("p");
+            descri.textContent = vinho.descricao;
+            div.append(descri);
+            const preco = document.createElement("span");
+            preco.classPreco = "preço";
+            preco.textContent = vinho.preco;
+            div.append(preco);
         });
     });
+
 
 botao.forEach(function (botoes) {
     botoes.addEventListener("click", function () {

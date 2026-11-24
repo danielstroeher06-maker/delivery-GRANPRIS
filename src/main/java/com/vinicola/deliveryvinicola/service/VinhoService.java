@@ -6,6 +6,7 @@ import com.vinicola.deliveryvinicola.repository.VinhoRepository;
 import org.springframework.stereotype.Service;
 import com.vinicola.deliveryvinicola.model.Vinho;
 
+import java.math.BigDecimal;
 import java.util.List;
 import java.util.Optional;
 
@@ -33,12 +34,13 @@ public class VinhoService {
         int estoque = vinho.getEstoque();
 
         if (quantidade > estoque) {
-           throw new QuantidadeInvalida("Quantidade invalida! Estoque insuficiente.");
+            throw new QuantidadeInvalida("Quantidade invalida! Estoque insuficiente.");
         }
 
         if (quantidade <= 0) {
             throw new QuantidadeInvalida("Quantidade invalida! A quantidade deve ser maior que zero.");
         }
+
 
         vinho.setEstoque(estoque - quantidade);
         repository.save(vinho);
@@ -46,21 +48,43 @@ public class VinhoService {
         return "Compra realizada com sucesso!";
     }
 
-    public String reporestoque(String nome, int quantidade){
+    public String reporestoque(String nome, int quantidade) {
         Optional<Vinho> optionalVinho = repository.findByNome(nome);
-        Vinho vinho = optionalVinho.orElseThrow(()-> new VinhoNaoEncontrado("Vinho não encontrado!"));
-        if (quantidade <= 0){
+        Vinho vinho = optionalVinho.orElseThrow(() -> new VinhoNaoEncontrado("Vinho não encontrado!"));
+        if (quantidade <= 0) {
             throw new QuantidadeInvalida("Quantidade invalida! A quantidade deve ser maior que zero.");
         }
-        vinho.setEstoque(vinho.getEstoque()+quantidade);
+        vinho.setEstoque(vinho.getEstoque() + quantidade);
         repository.save(vinho);
         return "Estoque atualizado com sucesso!";
     }
 
     public String descri(String nome, String descrico) {
         Optional<Vinho> optionalVinho = repository.findByNome(nome);
-        Vinho vinho = optionalVinho.orElseThrow(()->new VinhoNaoEncontrado("Vinho não encontrado!"));
+        Vinho vinho = optionalVinho.orElseThrow(() -> new VinhoNaoEncontrado("Vinho não encontrado!"));
         vinho.setDescricao(descrico);
+        repository.save(vinho);
+        return "Vinho atualizado com sucesso!";
+    }
+
+    public String alterar(String nome, String tipo, String tipoUva, Integer safra, String descricao, BigDecimal preco) {
+        Optional<Vinho> optionalVinho = repository.findByNome(nome);
+        Vinho vinho = optionalVinho.orElseThrow(() -> new VinhoNaoEncontrado("Vinho não encontrado!"));
+        if (tipoUva != null){
+            vinho.setTipoUva(tipoUva);
+        }
+        if (tipo != null){
+            vinho.setTipo(tipo);
+        }
+        if (safra != null){
+            vinho.setSafra(safra);
+        }
+        if (descricao != null) {
+            vinho.setDescricao(descricao);
+        }
+        if (preco != null){
+            vinho.setPreco(preco);
+        }
         repository.save(vinho);
         return "Vinho atualizado com sucesso!";
     }
@@ -77,4 +101,5 @@ public class VinhoService {
     public void deleteVinho(Long id) {
         repository.deleteById(id);
     }
+
 }
