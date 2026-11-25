@@ -16,6 +16,10 @@ fetch("http://localhost:8080/vinhos/listar")
             const div = document.createElement("div");
             div.className = "vinho";
             vinhos.append(div);
+            const imagem = document.createElement("img");
+            imagem.src = `imagens/${vinho.nome.toLowerCase()}.jpg`;
+            imagem.alt = `Garrafa de vinho ${vinho.nome}`;
+            div.append(imagem);
             const title = document.createElement("h4");
             title.textContent = vinho.nome;
             div.append(title);
@@ -49,6 +53,3 @@ botao.forEach(function (botoes) {
         }
     });
 });
-
-
-

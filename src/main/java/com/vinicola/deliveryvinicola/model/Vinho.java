@@ -21,9 +21,11 @@ public class Vinho {
     @NotBlank
     @Column(length = 100, nullable = false)
     private String nome;
-    @Column(length = 100)
+    @NotBlank
+    @Column(length = 100, nullable = false)
     private String tipoUva;
-    @Column(length = 100)
+    @NotBlank
+    @Column(length = 100, nullable = false)
     private String tipo;
     //    Na safra não foi colocado @Column, pois não é preciso impor nenhuma condição especifica
     private Integer safra;
